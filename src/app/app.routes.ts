@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { JohnPage } from './cv/john_cv.page';
 
 export const routes: Routes = [
   {
@@ -7,7 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'john',
-    loadComponent: ()=> import ('./cv/john_cv.page').then((m)=> m.JohnPage)
+    component: JohnPage,
   },
   {
     path: '',

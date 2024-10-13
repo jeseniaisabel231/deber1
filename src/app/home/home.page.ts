@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   IonHeader,
   IonToolbar,
@@ -8,10 +9,8 @@ import {
 
 @Component({
   selector: 'app-home',
-  styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [IonHeader, IonToolbar, IonTitle, IonContent],
-
   template: `<ion-header [translucent]="true">
       <ion-toolbar>
         <ion-title> Blank </ion-title>
@@ -31,10 +30,10 @@ import {
           <img
             src="../assets/img/perfil-John.jpg"
             alt=""
-            class="size-28 rounded-full  relative overflow-hidden animate-neon"
+            class="size-28 rounded-full relative overflow-hidden animate-neon"
           />
           <strong class="text-center m-4">John Mata</strong>
-          <button class="bg-blue-700 rounded-lg py-1">Ver CV</button>
+          <button class="bg-blue-700 rounded-lg py-1" (click)="router.navigate(['john'])">Ver CV</button>
         </article>
         <article
           class="flex flex-col bg-gradient-to-b from-[#121212] via-[#1f1f1f] p-9 rounded-lg"
@@ -62,5 +61,5 @@ import {
     </ion-content> `,
 })
 export class HomePage {
-  constructor() {}
+  constructor(public router: Router) {}
 }
