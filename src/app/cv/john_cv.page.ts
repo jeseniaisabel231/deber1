@@ -16,6 +16,7 @@ import {
   IonButtons,
   IonMenuButton,
 } from '@ionic/angular/standalone';
+import { MenuComponent } from "../components/menu.component";
 
 @Component({
   imports: [
@@ -34,18 +35,10 @@ import {
     IonMenu,
     IonButtons,
     IonMenuButton,
-  ],
+    MenuComponent
+],
   standalone: true,
   template: `
-    <ion-menu contentId="main-content">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Menú de Acciones</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding"></ion-content>
-    </ion-menu>
-
     <ion-header [translucent]="true">
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -56,7 +49,7 @@ import {
     </ion-header>
 
     <ion-content>
-      <main id="main-content" class="flex sm:flex-row flex-col">
+      <main id="menuBar" class="flex sm:flex-row flex-col">
         <aside
           class="flex flex-col gap-10 p-14 w-full sm:w-1/2 md:w-1/3 sm:border-r-4 sm:border-b-0 border-b-4 border-[#121212]"
         >
