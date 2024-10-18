@@ -12,6 +12,10 @@ export const routes: Routes = [
     component: JohnPage,
   },
   {
+    path:  'dustin',
+    component: DusPage,
+  },
+  {
     path: 'isabel',
     loadComponent: ()=> import ('./cv/isabel_cv.page').then((m)=> m.IsabelPage)
   },
