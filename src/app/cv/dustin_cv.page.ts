@@ -1,4 +1,6 @@
+import { MenuComponent } from '../components/menu.component';
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular'
 import {
   IonHeader,
   IonIcon,
@@ -15,10 +17,11 @@ import {
   IonMenu,
   IonButtons,
   IonMenuButton,
+  IonGrid,
+  IonCol,
+  IonRow,
+  IonToggle
 } from '@ionic/angular/standalone';
-
-import { MenuComponent } from '../components/menu.component';
-
 @Component({
   imports: [
     IonContent,
@@ -36,8 +39,13 @@ import { MenuComponent } from '../components/menu.component';
     IonMenu,
     IonButtons,
     IonMenuButton,
-    MenuComponent
+    MenuComponent,
+    IonGrid,
+    IonCol,
+    IonRow,
+    IonToggle
   ],
+  selector: 'app-home',
   standalone: true,
   template: `
     <ion-header [translucent]="true">
@@ -55,6 +63,8 @@ import { MenuComponent } from '../components/menu.component';
           class="flex flex-col gap-10 p-14 w-full sm:w-1/2 md:w-1/3  border-[#121212] bg-orange-300"
         >
           <div>
+          <ion-toggle (ionChange)="toggleDarkMode($event)" >Modo Oscuro</ion-toggle><br /><br />
+
             <h3 class="font-extrabold uppercase tracking-widest">Contacto</h3>
             <ul
               class="mt-4 flex flex-col gap-1 text-sm list-disc marker:text-[#706643] ml-4"
@@ -197,6 +207,34 @@ import { MenuComponent } from '../components/menu.component';
               }
             </ul>
             }
+            <h2 class="font-extrabold mb-4 uppercase tracking-widest"> Sígueme en mis redes sociales </h2>
+            <div class="">
+              <ion-grid>
+                <ion-row>
+                  <ion-col> <a class="flex gap-1" href="https://www.facebook.com/DustinJMS?locale=es_LA"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#4267B2">
+                  <path d="M22.675 0h-21.35C.597 0 0 .598 0 1.326v21.348C0 23.402.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.66-4.788 1.325 0 2.464.099 2.797.143v3.243l-1.918.001c-1.503 0-1.794.714-1.794 1.761v2.309h3.587l-.467 3.622h-3.12V24h6.116C23.402 24 24 23.402 24 22.674V1.326C24 .598 23.402 0 22.675 0z"/>
+                  </svg> Facebook </a> </ion-col>
+  
+                  <ion-col>
+              <a class="flex gap-1" href="https://www.tiktok.com/@tuusuario">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#000000">
+                <path d="M12 0h3.047c.066.707.241 1.397.512 2.056.346.834.862 1.59 1.516 2.22.685.652 1.488 1.16 2.368 1.493.569.219 1.173.355 1.785.394V12c-.748 0-1.491-.074-2.217-.22-.788-.155-1.548-.403-2.255-.74-.594-.27-1.157-.617-1.671-1.03v6.689c-.025.989-.24 1.967-.633 2.88-.429.982-1.086 1.866-1.917 2.577-.746.642-1.604 1.126-2.525 1.426-.986.32-2.026.407-3.046.256-.966-.14-1.898-.468-2.726-.958-.927-.564-1.714-1.336-2.309-2.267-.563-.866-.948-1.846-1.131-2.879-.178-.972-.129-1.97.143-2.918.34-1.298 1.105-2.487 2.166-3.316.809-.64 1.77-1.058 2.78-1.215.847-.127 1.72-.07 2.55.164v3.049c-.618-.25-1.29-.357-1.96-.31-.612.044-1.21.237-1.737.565-.615.374-1.113.923-1.436 1.571-.482.92-.527 2.03-.122 2.974.416.956 1.285 1.675 2.288 1.92.996.246 2.094-.033 2.822-.732.665-.6 1.035-1.483 1.034-2.387.002-3.89-.004-7.781.002-11.672z"/>
+              </svg>
+              TikTok
+                </a>
+              </ion-col>
+  
+              <ion-col>
+                <a class="flex gap-1" href="https://www.instagram.com/tuusuario">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#E4405F">
+                    <path d="M12 0c3.29 0 3.697.012 4.987.07 1.287.058 2.172.276 2.672.465a5.381 5.381 0 011.945 1.26 5.381 5.381 0 011.26 1.945c.189.5.407 1.385.465 2.672.058 1.29.07 1.697.07 4.987s-.012 3.697-.07 4.987c-.058 1.287-.276 2.172-.465 2.672a5.381 5.381 0 01-1.26 1.945 5.381 5.381 0 01-1.945 1.26c-.5.189-1.385.407-2.672.465-1.29.058-1.697.07-4.987.07s-3.697-.012-4.987-.07c-1.287-.058-2.172-.276-2.672-.465a5.381 5.381 0 01-1.945-1.26 5.381 5.381 0 01-1.26-1.945c-.189-.5-.407-1.385-.465-2.672C.012 15.697 0 15.29 0 12s.012-3.697.07-4.987c.058-1.287.276-2.172.465-2.672a5.381 5.381 0 011.26-1.945 5.381 5.381 0 011.945-1.26c.5-.189 1.385-.407 2.672-.465C8.303.012 8.71 0 12 0zm0 2.163c-3.24 0-3.63.012-4.906.07-1.186.054-1.828.246-2.255.41-.568.22-.975.482-1.402.91a3.42 3.42 0 00-.91 1.402c-.164.427-.356 1.069-.41 2.255-.058 1.276-.07 1.666-.07 4.906s.012 3.63.07 4.906c.054 1.186.246 1.828.41 2.255.22.568.482.975.91 1.402.427.428.834.69 1.402.91.427.164 1.069.356 2.255.41 1.276.058 1.666.07 4.906.07s3.63-.012 4.906-.07c1.186-.054 1.828-.246 2.255-.41.568-.22.975-.482 1.402-.91.428-.427.69-.834.91-1.402.164-.427.356-1.069.41-2.255.058-1.276.07-1.666.07-4.906s-.012-3.63-.07-4.906c-.054-1.186-.246-1.828-.41-2.255a3.42 3.42 0 00-.91-1.402 3.42 3.42 0 00-1.402-.91c-.427-.164-1.069-.356-2.255-.41-1.276-.058-1.666-.07-4.906-.07zm0 3.26a6.577 6.577 0 110 13.154 6.577 6.577 0 010-13.154zm0 1.659a4.918 4.918 0 100 9.836 4.918 4.918 0 000-9.836zm6.406-1.035a1.54 1.54 0 11-3.08 0 1.54 1.54 0 013.08 0z"/>
+                  </svg>
+                  Instagram
+                </a>
+            </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
           </div>
         </section>
       </main>
@@ -204,6 +242,29 @@ import { MenuComponent } from '../components/menu.component';
   `,
 })
 export class DusPage {
+
+  constructor( private platform: Platform ) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      this.toggleDarkTheme(prefersDark.matches);
+      prefersDark.addListener((mediaQuery) =>
+        this.toggleDarkTheme(mediaQuery.matches)
+      );
+    });
+  }
+
+  toggleDarkMode(event: any) {
+    this.toggleDarkTheme(event.detail.checked);
+  }
+
+  toggleDarkTheme(shouldAdd: boolean) {
+    document.body.classList.toggle('dark', shouldAdd);
+  }
+
   public projects = [
     {
       title: 'Aplicación de Escritorio',
@@ -222,4 +283,5 @@ export class DusPage {
         ]
     }
   ];
+
 }
