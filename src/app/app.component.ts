@@ -27,7 +27,7 @@ import {
     <ion-content class="ion-padding">
       <ion-button (click)="router.navigate(['john'])"> CV John </ion-button>
       <ion-button (click)="router.navigate(['dustin'])"> CV Dustin </ion-button>
-      <!--<ion-button (click)="router.navigate(['isabel'])"> CV Isabel </ion-button>-->
+      <ion-button (click)="router.navigate(['isabel'])"> CV Isabel </ion-button>
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main-content"></ion-router-outlet>

@@ -1,21 +1,63 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { Component } from '@angular/core';
 import {
   IonHeader,
   IonIcon,
   IonTitle,
   IonToolbar,
+  IonContent,
+  IonAccordion,
+  IonAccordionGroup,
+  IonItem,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardContent,
+  IonMenu,
+  IonButtons,
+  IonMenuButton,
+  IonAlert,
+  IonButton,
+  IonInput,
+  IonList,
 } from '@ionic/angular/standalone';
-import { IonContent } from '@ionic/angular/standalone';
+
+import { MenuComponent } from '../components/menu.component';
 
 @Component({
-  imports: [IonContent, IonIcon, IonHeader, IonToolbar, IonTitle],
+  imports: [
+    IonContent,
+    IonIcon,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonAccordion,
+    IonAccordionGroup,
+    IonItem,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardContent,
+    IonMenu,
+    IonButtons,
+    IonMenuButton,
+    MenuComponent,
+    IonAlert,
+    IonButton,
+    IonInput,
+    IonList,
+  ],
   standalone: true,
   template: `
     <ion-header [translucent]="true">
       <ion-toolbar>
-        <ion-title> Blank </ion-title>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title> Curriculum Vitae de Isabel Pazto </ion-title>
       </ion-toolbar>
     </ion-header>
+
     <ion-content>
       <main class="flex sm:flex-row flex-col">
         <aside
@@ -27,10 +69,21 @@ import { IonContent } from '@ionic/angular/standalone';
               <hr class="border-[#6f6748] w-14 border-2 rounded-full" />
             </div>
             <ul class="mt-4 flex flex-col gap-2 text-sm">
+              <li>0990746328</li>
               <li>
-                0990746328
+                <div class="flex items-center gap-2">
+                  <a>jesenia.pazto&#64;epn.edu.ec</a>
+
+                  <ion-button id="present-alert">Contactar</ion-button>
+                  <ion-alert
+                    trigger="present-alert"
+                    subHeader="Confirmar"
+                    message="Segur@ deseas contactarte con esta persona?."
+                    [buttons]="alertButtons"
+                  ></ion-alert>
+                </div>
               </li>
-              <li>jesenia.pazto&#64;epn.edu.ec</li>
+
               <li>Quito - Ecuador</li>
             </ul>
           </div>
@@ -137,6 +190,21 @@ import { IonContent } from '@ionic/angular/standalone';
               <li>Sistema de Historial Medico - Medicare</li>
             </ul>
           </div>
+
+          <ion-list>
+            <ion-list>
+
+              <ion-item>
+                <ion-input
+                  label="Deja tu comentario"
+                  placeholder="Escribir texto"
+                ></ion-input>
+                <ion-button >Enviar</ion-button>
+              </ion-item>
+
+            </ion-list>
+          </ion-list>
+
         </section>
       </main>
     </ion-content>
@@ -145,4 +213,15 @@ import { IonContent } from '@ionic/angular/standalone';
     color: white;
   }`,
 })
-export class IsabelPage {}
+export class IsabelPage {
+  alertButtons = [
+    { text: 'cancelar', role: 'cancel' },
+    {
+      text: 'enviar',
+      handler: () => {
+        window.location.href = 'mailto:jesenia.pazto@epn.edu.ec';
+      },
+    },
+  ];
+
+}

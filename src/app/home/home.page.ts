@@ -39,12 +39,12 @@ import {
           class="flex flex-col bg-gradient-to-b from-[#121212] via-[#1f1f1f] p-9 rounded-lg"
         >
           <img
-            src="../assets/img/perfil-John.jpg"
+            src="../assets/img/perfil-Isabel.jpg"
             alt=""
             class="size-28 rounded-full  relative overflow-hidden animate-neon"
           />
           <strong class="text-center m-4">Isabel <br> Pazto</strong>
-          <!--<button class="bg-blue-700 rounded-lg py-1"  (click)="router.navigate(['isabel'])">Ver CV</button>-->
+          <button class="bg-blue-700 rounded-lg py-1"  (click)="router.navigate(['isabel'])">Ver CV</button>
 
         </article>
         <article
