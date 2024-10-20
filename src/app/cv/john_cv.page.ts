@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {
   IonHeader,
-  IonIcon,
   IonTitle,
   IonToolbar,
   IonContent,
@@ -15,13 +14,14 @@ import {
   IonMenu,
   IonButtons,
   IonMenuButton,
+  IonList,
+  IonLabel,
 } from '@ionic/angular/standalone';
-import { MenuComponent } from "../components/menu.component";
+import { MenuComponent } from '../components/menu.component';
 
 @Component({
   imports: [
     IonContent,
-    IonIcon,
     IonHeader,
     IonToolbar,
     IonTitle,
@@ -35,8 +35,10 @@ import { MenuComponent } from "../components/menu.component";
     IonMenu,
     IonButtons,
     IonMenuButton,
-    MenuComponent
-],
+    MenuComponent,
+    IonList,
+    IonLabel,
+  ],
   standalone: true,
   template: `
     <ion-header [translucent]="true">
@@ -53,25 +55,83 @@ import { MenuComponent } from "../components/menu.component";
         <aside
           class="flex flex-col gap-10 p-14 w-full sm:w-1/2 md:w-1/3 sm:border-r-4 sm:border-b-0 border-b-4 border-[#121212]"
         >
-          <div>
-            <h3 class="font-extrabold uppercase tracking-widest">Contacto</h3>
-            <ul
-              class="mt-4 flex flex-col gap-1 text-sm list-disc marker:text-[#706643] ml-4"
-            >
-              <li><a href="tel:+593990123317">+593 990123317</a></li>
-              <li>
-                <a href="mailto:jhonmata0427@gmail.com"
-                  >jhonmata0427&#64;gmail.com</a
+          <ion-list class="rounded-lg p-4">
+            <h3 class="font-extrabold uppercase tracking-widest mb-2">
+              Contacto
+            </h3>
+            <ion-item>
+              <svg
+                class="size-7 mr-2"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m14.3 16 1.4-1.4a2.2 2.2 0 0 1 3 0l1.6 1.6a2.2 2.2 0 0 1 0 3.1l-.7.7a3.3 3.3 0 0 1-3.8.6A29 29 0 0 1 3.3 8.2 3.3 3.3 0 0 1 4 4.4l.7-.8a2.2 2.2 0 0 1 3.1 0l1.6 1.6a2.2 2.2 0 0 1 0 3.1L8.1 9.8A30 30 0 0 0 11 13l3.3 3h0Z"
+                /></svg
+              ><a class="text-sm" href="tel:+593990123317">+593 990123317</a>
+            </ion-item>
+            <ion-item>
+              <svg
+                class="size-7 mr-2"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <g stroke="#fff" stroke-linecap="round" stroke-width="2">
+                  <path
+                    stroke-linejoin="round"
+                    d="m4 7 6.2 4.7a3 3 0 0 0 3.6 0L20 7"
+                  />
+                  <rect width="18" height="14" x="3" y="5" rx="2" />
+                </g>
+              </svg>
+              <a class="text-sm" href="mailto:jhonmata0427@gmail.com"
+                >jhonmata0427&#64;gmail.com</a
+              >
+            </ion-item>
+            <ion-item>
+              <svg
+                class="size-7 mr-2"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
                 >
-              </li>
-              <li>Quito - Ecuador</li>
-              <li>
-                <a href="https://www.linkedin.com/in/jhon0427/" target="_blank"
-                  >https://www.linkedin.com/in/jhon0427/</a
-                >
-              </li>
-            </ul>
-          </div>
+                  <path
+                    d="M12 21c3.5-3.6 7-6.8 7-10.8 0-4-3.1-7.2-7-7.2s-7 3.2-7 7.2 3.5 7.2 7 10.8Z"
+                  />
+                  <path d="M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                </g>
+              </svg>
+              <p class="text-sm">Quito - Ecuador</p>
+            </ion-item>
+            <ion-item>
+              <svg
+                class="size-7 mr-2"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#fff"
+                  d="M18.7 4H5.4A1.3 1.3 0 0 0 4 5.2v13.4A1.4 1.4 0 0 0 5.4 20h13.3a1.3 1.3 0 0 0 1.3-1.4V5.2A1.2 1.2 0 0 0 18.7 4ZM9 17.3H6.7v-7H9v7ZM7.9 9.1A1.2 1.2 0 0 1 6.7 8a1.2 1.2 0 0 1 1.2-1.2A1.2 1.2 0 0 1 9.1 8 1.2 1.2 0 0 1 8 9.1Zm9.4 8.2H15v-3.9c0-.9-.3-1.5-1.2-1.5a1.2 1.2 0 0 0-1.1.8l-.1.6v4h-2.3v-7h2.3v1a2.3 2.3 0 0 1 2-1.3c1.6 0 2.7 1 2.7 3.1v4.2Z"
+                />
+              </svg>
+              <a class="text-sm" href="https://www.linkedin.com/in/jhon0427/" target="_blank"
+                >https://www.linkedin.com/in/jhon0427/</a
+              >
+            </ion-item>
+          </ion-list>
           <div class="flex flex-col ">
             <img
               src="../assets/img/perfil-John.jpg"
@@ -79,11 +139,11 @@ import { MenuComponent } from "../components/menu.component";
             />
             <h3 class="font-extrabold uppercase tracking-widest">Sobre mí</h3>
             <p class="text-sm mt-4">
-              Tengo una curiosidad incesante por cómo funcionan las cosas. Me
-              encanta el reto de resolver problemas complejos mezclando lógica y
-              creatividad. Me apasiona el continuo aprendizaje y estoy
-              constantemente explorando nuevas tecnologíaw para aportar
-              soluciones innovadoras.
+              Tengo una curiosidad incesante por conocer cómo funcionan las
+              cosas. Me encanta el reto de resolver problemas complejos
+              mezclando lógica y creatividad. Me apasiona el continuo
+              aprendizaje y estoy constantemente explorando nuevas tecnologíaw
+              para aportar soluciones innovadoras.
             </p>
           </div>
           <div>
