@@ -67,7 +67,7 @@ import { MenuComponent } from '../components/menu.component';
                 viewBox="0 0 24 24"
               >
                 <path
-                  stroke="#fff"
+                  class="dark:stroke-white stroke-black"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -82,7 +82,11 @@ import { MenuComponent } from '../components/menu.component';
                 fill="none"
                 viewBox="0 0 24 24"
               >
-                <g stroke="#fff" stroke-linecap="round" stroke-width="2">
+                <g
+                  class="dark:stroke-white stroke-black"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                >
                   <path
                     stroke-linejoin="round"
                     d="m4 7 6.2 4.7a3 3 0 0 0 3.6 0L20 7"
@@ -102,7 +106,7 @@ import { MenuComponent } from '../components/menu.component';
                 viewBox="0 0 24 24"
               >
                 <g
-                  stroke="#fff"
+                  class="dark:stroke-white stroke-black"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
@@ -123,11 +127,14 @@ import { MenuComponent } from '../components/menu.component';
                 viewBox="0 0 24 24"
               >
                 <path
-                  fill="#fff"
+                  class="dark:fill-white fill-black"
                   d="M18.7 4H5.4A1.3 1.3 0 0 0 4 5.2v13.4A1.4 1.4 0 0 0 5.4 20h13.3a1.3 1.3 0 0 0 1.3-1.4V5.2A1.2 1.2 0 0 0 18.7 4ZM9 17.3H6.7v-7H9v7ZM7.9 9.1A1.2 1.2 0 0 1 6.7 8a1.2 1.2 0 0 1 1.2-1.2A1.2 1.2 0 0 1 9.1 8 1.2 1.2 0 0 1 8 9.1Zm9.4 8.2H15v-3.9c0-.9-.3-1.5-1.2-1.5a1.2 1.2 0 0 0-1.1.8l-.1.6v4h-2.3v-7h2.3v1a2.3 2.3 0 0 1 2-1.3c1.6 0 2.7 1 2.7 3.1v4.2Z"
                 />
               </svg>
-              <a class="text-sm" href="https://www.linkedin.com/in/jhon0427/" target="_blank"
+              <a
+                class="text-sm"
+                href="https://www.linkedin.com/in/jhon0427/"
+                target="_blank"
                 >https://www.linkedin.com/in/jhon0427/</a
               >
             </ion-item>
